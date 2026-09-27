@@ -1,6 +1,8 @@
 # UTZLINE Install ITP — installable app
 
-**Current version: v41** (its own independent version line, separate from Site Measure/Viewer's — bump this line, and add a dated entry below, every time a new build ships. See `next-version-notes.md` in the project for the full per-version changelog if a gap ever needs filling in.)
+**Current version: v42** (its own independent version line, separate from Site Measure/Viewer's — bump this line, and add a dated entry below, every time a new build ships. See `next-version-notes.md` in the project for the full per-version changelog if a gap ever needs filling in.)
+
+**v42 (2026-09-27):** Hides the **Schedule Backups** folder from the project list. Scheduler v29 now keeps its daily spreadsheet backups in that folder, directly in the main Projects folder (Andrew: *"a schedule backups folder directly in the main folder ... I meant in the main folder. Not the individual projects folder."*). Every app lists every folder in the main folder as a project, so each one now leaves that folder out: `isReservedRootFolderName`, the same one-line rule in every app. Tested across all 11 apps by `pdftest-projects/run_schedule_backups_folder_hidden.js`, which fails on every app's previous build and passes on the new ones.
 
 **v41 (2026-09-27):** New "Sub orders" summary on the checklist screen. Andrew, verbatim: "ok now we need all joinery summary pages to show the associated orders. with the option to mark them as recieved. the main schedule also needs a mark as received button for orders. on the schedule" — this app's own slice of that request is the Checklist screen (the joinery item's own "summary page" here), which for this app is not built from the shared `source.html` the plan-drawing apps use, so this is its own from-scratch implementation reading the exact same UTZLINE Sub Orders data those apps' own cards read.
 

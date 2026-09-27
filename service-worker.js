@@ -326,7 +326,8 @@
 // case), the empty state, and that Inbox/Files stay untouched. Full suite
 // green (14/14).
 var ICON_VERSION = "v2";
-var CACHE_NAME = "utzline-itp-cache-v41";
+// v42 (2026-09-27): "Schedule Backups" folder hidden from the project list.
+var CACHE_NAME = "utzline-itp-cache-v42";
 
 var PRECACHE_URLS = [
   "./",
