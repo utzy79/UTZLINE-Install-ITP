@@ -276,8 +276,20 @@
 // untouched. run_room_list_alpha_and_marker_menu.js updated (stale
 // fitScale*5 assertion replaced with a >=1 native-scale check); full suite
 // green.
+// v40 (2026-09-27): company logo (general note, not scoped to one app) --
+// Andrew, verbatim: "change company logo should only be visable in the
+// projects app, in every other app it should load the one chosen in
+// projects." This app's own per-device Insert/Change/Remove logo UI
+// (IndexedDB-backed) is gone; the Projects screen now shows a READ-ONLY
+// thumbnail sourced from the shared "company-logo.png" file UTZLINE
+// Projects owns, at the Projects root (the same root utzline-users.csv
+// already comes from) -- no write path, no device-local copy any more.
+// Existing PDF-export logo placement (top-left of every page, aspect-
+// correct) is unchanged, just now sourced from the shared file instead of
+// local storage. Covered by the new run_company_logo_readonly.js; full
+// suite green (13/13).
 var ICON_VERSION = "v2";
-var CACHE_NAME = "utzline-itp-cache-v39";
+var CACHE_NAME = "utzline-itp-cache-v40";
 
 var PRECACHE_URLS = [
   "./",
