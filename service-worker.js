@@ -288,8 +288,45 @@
 // correct) is unchanged, just now sourced from the shared file instead of
 // local storage. Covered by the new run_company_logo_readonly.js; full
 // suite green (13/13).
+// v41 (2026-09-27): new "Sub orders" summary on the checklist screen.
+// Andrew, verbatim: "ok now we need all joinery summary pages to show the
+// associated orders. with the option to mark them as recieved. the main
+// schedule also needs a mark as received button for orders. on the
+// schedule" -- this app's own slice. Every UTZLINE Sub Orders order
+// attached to a checklist's own joinery item now shows in a new section
+// between Photos and Save & exit, CATEGORISED under a heading per type
+// (base steel/upholstery/timber/aluminium in Sub Orders' own order, then
+// any custom type alphabetically, using the typeLabel Sub Orders itself
+// snapshotted onto the order so a custom type's real name shows without a
+// copy of that app's own registry) and OPENABLE (resolves the order's own
+// file from Sub Orders' Files/ folder, same URL.createObjectURL pattern
+// "View job note" already uses). A Received checkbox + date per order
+// mirrors Sub Orders' own View Orders list interaction (this app's own
+// former rework "Received back on site" tickbox is gone as of v37 --
+// Delivery ITP owns that milestone now, so Sub Orders' own checkbox is the
+// actual precedent here): ticking auto-fills today's date, unticking
+// clears both fields, editing the date re-writes it. The write
+// (setSubOrderReceived) rebuilds the order record via a shallow copy
+// (Object.assign), never an explicit field list -- Sub Orders' own same-day
+// v5 fix found that an allowlist there silently dropped typeLabel every
+// time an order was marked received, so every writer touching this shared
+// file has to stay immune to the same mistake. Always re-reads
+// Project Saves/UTZLINE Sub Orders/Orders/<Level> - <Room> - <Joinery
+// No.>.json fresh before writing, then writes the whole array back with
+// the same JSON.stringify(data, null, 2) shape Sub Orders itself uses.
+// Strictly read-only against Sub Orders' own Inbox/ and Files/ folders;
+// read-write ONLY on received/receivedDate inside Orders/*.json. A new
+// once-per-project-open warm-up probe (warmSubOrdersFolderCache, fired
+// from openProject) avoids paying for the "does this project even have a
+// Sub Orders folder" check as one more named lookup on the first checklist
+// tap of a session -- caught by the existing Round 3/4 dir-lookup-budget
+// tests, same class of fix as noOldItpFolderThisSession. New
+// run_sub_orders.js: grouping, custom-type label + neutral chip, the
+// checkbox/date write-through (including the typeLabel-preservation
+// case), the empty state, and that Inbox/Files stay untouched. Full suite
+// green (14/14).
 var ICON_VERSION = "v2";
-var CACHE_NAME = "utzline-itp-cache-v40";
+var CACHE_NAME = "utzline-itp-cache-v41";
 
 var PRECACHE_URLS = [
   "./",
