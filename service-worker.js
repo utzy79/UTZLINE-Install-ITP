@@ -250,8 +250,34 @@
 // joineryStatusRank/joineryStatusIcon/joineryDisplayIcon needed the new
 // case, and manufactured/delivered/installed all shift up one rank (4/5/6,
 // was 3/4/5) to make room for it. No other behaviour change.)
+// v37 (2026-09-26): Rework Register remainder -- "Delivered to site" now
+// owned by Delivery ITP (photo+pin required there), this app shows it
+// read-only, "received" REWORK_STATES value collapsed onto "delivered",
+// rework file now shared with Delivery ITP (itp-install-rework/"Install
+// ITP Rework"). Plus the held status-icon revert from the icon-sweep round
+// (machined ⚙️, in_manufacture 🏭) -- see README.md's v37 entry for both.
+// v38 (2026-09-26): PIN-gated sign-offs -- Andrew, verbatim: "pin entry
+// required for sign offs. stopping anyone from randomly signing off under
+// another users name." The installer sign-off stays free text (unchanged);
+// the Metro Site Supervisor sign-off now uses the shared name+PIN
+// registry's own picker, PIN-verified at selection (same mechanism as
+// Delivery ITP's v17). BOTH signatures are still required to sign off --
+// nothing removed here, unlike Delivery ITP where the supervisor block was
+// retired entirely. See README.md's v38 entry.
+// v39 (2026-09-26): "Go to location"/"Go to pin" zoom feel now matches
+// UTZLINE Projects (general note, not scoped to one app) -- Andrew's own
+// final word after a dictation trail: "view on plan in projects is
+// actually the perfect zoom level." centrePlanOn's single-marker jump now
+// uses Projects' own Math.max(planView.scale, 1) (at least native 1:1
+// pixel scale), replacing the old fitScale*5 multiplier, which zoomed to a
+// different absolute level depending on a level's own image resolution.
+// PLAN_FOCUS_ZOOM is kept as framePlanPoints' own multi-marker
+// bounding-box zoom CAP (the "Go to room" case, a different feature) --
+// untouched. run_room_list_alpha_and_marker_menu.js updated (stale
+// fitScale*5 assertion replaced with a >=1 native-scale check); full suite
+// green.
 var ICON_VERSION = "v2";
-var CACHE_NAME = "utzline-itp-cache-v36";
+var CACHE_NAME = "utzline-itp-cache-v39";
 
 var PRECACHE_URLS = [
   "./",
