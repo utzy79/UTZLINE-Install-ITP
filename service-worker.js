@@ -327,7 +327,8 @@
 // green (14/14).
 var ICON_VERSION = "v2";
 // v42 (2026-09-27): "Schedule Backups" folder hidden from the project list.
-var CACHE_NAME = "utzline-itp-cache-v42";
+// v43 (2026-09-28): rework changes as event files (shared UtzRework module), per-rework PDFs, delivered in green at the bottom.
+var CACHE_NAME = "utzline-itp-cache-v43";
 
 var PRECACHE_URLS = [
   "./",
