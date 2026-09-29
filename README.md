@@ -1,6 +1,11 @@
 # UTZLINE Install ITP — installable app
 
-**Current version: v43** (its own independent version line, separate from Site Measure/Viewer's — bump this line, and add a dated entry below, every time a new build ships. See `next-version-notes.md` in the project for the full per-version changelog if a gap ever needs filling in.)
+**Current version: v44 (RC 1.0)** (its own independent version line, separate from Site Measure/Viewer's — bump this line, and add a dated entry below, every time a new build ships. See `next-version-notes.md` in the project for the full per-version changelog if a gap ever needs filling in.)
+
+**v44 (2026-09-29) — RC 1.0.** Andrew: *"ok, now change them all to version RC 1.0. and have that on the logos (small)"*.
+
+- The app is now **RC 1.0** (release candidate 1.0) across the UTZLINE family. A small **RC 1.0** tag sits beside the logo in the header.
+- The build number (v44) still counts up underneath, so installed copies pick up each update. It's also what the Windows installer "Setup RC 1.0" contains.
 
 **v43 (2026-09-28) — Reworks: every change is its own file, one PDF per rework, delivered in green at the bottom.** The rework round. Andrew: *"also need to fix this rework conflict. rework pdfs should be user datetime stamped. they should also show the entire status log per rework and have larger photos, each rework becomes its own pdf with larger photos (1/4) a4 per photo, 4 per page"*, *"reworks that are delivered to be green border / text and sent to bottom of page (maybe a separate selectable delivered folder)"*, and *"rework pdf photo size is good right now, but only overflow to page 2,3,etc if they dont fit on page 1"*. Standard: project doc `claude/utzline-rework-event-standard-v1.md`.
 - **No more conflict copies.** Changing a rework's state and closing it out no longer rewrite the item's shared rework file. Each one is a new small file in the item's log folder, named with your name and the date and time. Flat projects: `Project Saves/UTZLINE ITP/Install ITP Rework Log/<Level> - <Room> - <Code>/`. Legacy projects: `<Code> log/` beside the rework file. Only adding or deleting a rework still writes the shared file. A name (Home screen) is needed for every change.
