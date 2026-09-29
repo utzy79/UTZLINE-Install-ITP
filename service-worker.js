@@ -329,7 +329,8 @@ var ICON_VERSION = "v2";
 // v42 (2026-09-27): "Schedule Backups" folder hidden from the project list.
 // v43 (2026-09-28): rework changes as event files (shared UtzRework module), per-rework PDFs, delivered in green at the bottom.
 // v44 (2026-09-29): RC 1.0 -- the version is shown as RC 1.0, with a small "RC 1.0" tag on the logo.
-var CACHE_NAME = "utzline-itp-cache-v44";
+// v45 (2026-09-29): RC 1.0 -- "Projects on this device": pick the jobs this device works on; sync help; get ready for offline.
+var CACHE_NAME = "utzline-itp-cache-v45";
 
 var PRECACHE_URLS = [
   "./",
