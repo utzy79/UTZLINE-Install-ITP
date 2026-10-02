@@ -1,6 +1,30 @@
 # UTZLINE Install ITP — installable app
 
-**Current version: v56 (RC 1.0)** (its own independent version line, separate from Site Measure/Viewer's — bump this line, and add a dated entry below, every time a new build ships. See `next-version-notes.md` in the project for the full per-version changelog if a gap ever needs filling in.)
+**Current version: v60 (RC 1.0)** (its own independent version line, separate from Site Measure/Viewer's — bump this line, and add a dated entry below, every time a new build ships. See `next-version-notes.md` in the project for the full per-version changelog if a gap ever needs filling in.)
+
+**v60 (2026-10-02) — RC 1.0: builder logo on the top bar, logos folder, reversed Machined.**
+
+- **Builder logo at the far right of the top bar** (Andrew: *"builder logo on the far right of the top bar"*): one logo in the header, just left of the day / night button, shown only while a project is open and the builder has a logo (it is hidden on the project list).
+- **Company and builder logos live in a `logos` folder** at the Projects root (Andrew: *"move the company and builders logos into a logos folder"*). Every app reads `logos/` first and falls back to the old root files, so nothing breaks before the move; UTZLINE Projects writes only into `logos/` and copies the root files across once (copies -- nothing is moved or deleted). `logos` is never listed as a project.
+- **Reversed Machined** (Andrew: *"if something is flagged as machined, but then the machining gets reversed, the flags need to be reversed also"*): the status now honours the Machine Schedule's `statusRetract` event -- undo a cut there and this app drops the item back to its earlier stage too (history shows the entry struck through, then "reversed"). Later re-machining counts normally.
+- **Dark mode controls**: drop-downs, their open lists, text boxes and buttons that no style had touched now get a real dark background and readable text (one shared rule), and the day / night contrast was swept for white-on-pale text.
+
+**v59 (2026-10-02) — Every rework now records which app logged it; the Rework register shows a "Logged in" column beside who and when.**
+
+Every rework entry carries `createdApp` ("UTZLINE Install ITP"). The shared rework module (register, Outstanding reworks page, PDF, detail view) shows the app next to who logged it; reworks logged before this update show a dash. The sign-in "Opening…" cover is inlined. Version 59.
+
+**v58 (2026-10-01) — RC 1.0: Add / Open rework on the joinery item bar, and a flag on the room bar for outstanding reworks.**
+
+- **Item bar:** every joinery item row gets a red **Add rework** button (no rework logged yet) or **Open rework (n)** (n still outstanding) / **Open rework** (all delivered) -- one tap to that item's Rework screen, no need to go back to the plan and long-press the marker (Andrew: *"install itp needs add / open rework on the joinery item bar"*).
+- **Room bar:** a red **🛠 n reworks** flag on a room with outstanding reworks (not yet delivered / closed out) in the Rooms list (Andrew: *"a flag in the room bar that there are outstanding reworks in that room"*).
+- Both come from one cheap read per project (the rework files without photos plus each item's log, the same data as the Outstanding reworks page), kept for a minute and re-read when the Rework screen is left.
+
+**v57 (2026-10-01) — RC 1.0: ITP header logos, Save and exit, builder logo on project rows, Add rework here.**
+
+- **Save and exit:** the checklist page's button says **Save and exit** in every state (it said just *Exit* once the item was signed off).
+- **PDF header:** the builder's logo is **25% smaller** and sits **far left**; the Metro Joinery (company) logo is **centred**; the UTZLINE mark stays top right (Andrew: *"builder logo is way too big. make it 25% smaller and to the far left, with our logo in the centre of the header"*). The **PHOTOS** heading now sits **below** the logo band on photo pages, so the logos no longer cover it.
+- **Project rows:** the builder's logo at the far right of each project row, scaled to the row (Andrew: *"builders logo to go on the far right of each project toolbar scaled to fit the toolbar"*).
+- **The plan PDF export** (Site Measure / Viewer) has a **second QR code**, dark red, at the bottom right of each page under the first one's column and labelled **Add rework here** (Andrew: *"another qr code that takes you to the add rework option ... bottom of the page under right aligned with the current one and a different colour (red if possible) labeled add rework here"*). It carries the same item link with `a=rework`; scanning it (or opening it from the phone's camera) in the Install or Delivery ITP goes straight to that item's Add rework screen; the Manufacture ITP (no rework screen) opens the item and says rework is added in the Install or Delivery ITP.
 
 **v56 (2026-10-01) — RC 1.0: code-only file names -- joinery codes, not descriptions, in every file and folder name (path-limit round, fourth build).**
 
