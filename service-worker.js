@@ -340,7 +340,7 @@ var ICON_VERSION = "v2";
 // v53 (2026-10-01): RC 1.0 -- Windows' 260-character path limit: shorter record names in the event store (see README)
 // v59 (2026-10-02): RC 1.0 -- every rework records the app that logged it ("Logged in" column in the register), sign-in cover inlined
 // v60 (2026-10-02): RC 1.0 -- builder logo far right of the top bar, logos folder, reversed Machined, dark-mode controls.
-var CACHE_NAME = "utzline-itp-cache-v91";
+var CACHE_NAME = "utzline-itp-cache-v92";
 
 var PRECACHE_URLS = [
   "./",
