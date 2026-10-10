@@ -2,7 +2,11 @@
 
 **Install ITP, ITP items (2026-10-07):** anti-ligature, security fittings, infection control and the hinge angle / type now come from the project's **Manufacture** ITP settings (Projects → ITP items); only this ITP's own added lines are its own.
 
-**Current version: v92 (RC 1.0)** (its own independent version line, separate from Site Measure/Viewer's — bump this line, and add a dated entry below, every time a new build ships. See `next-version-notes.md` in the project for the full per-version changelog if a gap ever needs filling in.)
+**Current version: v96 (RC 1.0)** (its own independent version line, separate from Site Measure/Viewer's — bump this line, and add a dated entry below, every time a new build ships. See `next-version-notes.md` in the project for the full per-version changelog if a gap ever needs filling in.)
+
+**v96 (2026-10-10): more tables.** (Andrew: "all tables need to be sortable, selectable columns".) Rework register: the Columns menu (show / hide / move, remembered per device) beside its existing heading sort.
+
+**v95 (2026-10-10): zones are not levels.** A level that UTZLINE Projects split over several floor plans ("LEVEL 1 (H1a)", "LEVEL 1 (H1b)") is one row on the Levels screen (the level opens its first plan, its plans listed under it); the Rooms screen and the plan read the real level with its zone ("LEVEL 1 · H1a") and have the level's plans as tabs. Nothing on disk changes: items keep the plan's name as their level, folders stay as they are.
 
 **v88 (2026-10-07):** **Names only appear in apps the person has permission for** (Andrew: "when opening any app, your name should only appear if you have permission to be in that app."). A name with no apps ticked and no department default is listed nowhere; a department with no Apps list gives no apps; the name signed in on the device is no longer an exception -- with no permission for this app it is signed out and the cover says "No access to this app. Ask an administrator". Administrators still see everything; while there is no administrator yet (a new setup) nobody is locked out; the last-read users / departments / department apps are used when the folder can't be read. The first time an administrator opens an app a note says "N names have no app access set. Open Users to assign." Also: a department's default apps + per-person extras (Users screen), the site measure opens as the PDF first. Nothing is deleted.
 
